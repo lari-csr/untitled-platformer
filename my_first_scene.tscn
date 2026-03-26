@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://lxyhsoue4wh2"]
+
+[ext_resource type="Texture2D" uid="uid://bh2xipyknakt1" path="res://icon.svg" id="1_ebbnx"]
+[ext_resource type="PackedScene" uid="uid://b1iun4g5tfoc1" path="res://bobert.tscn" id="2_bo7ot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo7ot"]
+size = Vector2(128, 128)
+
+[node name="Node2D" type="Node2D" unique_id=1664644054]
+
+[node name="Label" type="Label" parent="." unique_id=651662969]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Hello World!"
+
+[node name="Floor" type="Sprite2D" parent="." unique_id=214565783]
+position = Vector2(587, 647)
+scale = Vector2(9.688688, -0.8199875)
+texture = ExtResource("1_ebbnx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor" unique_id=664176332]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D" unique_id=892981885]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_bo7ot")
+
+[node name="Bobert" parent="." unique_id=2063614412 instance=ExtResource("2_bo7ot")]
+position = Vector2(464, 568)
