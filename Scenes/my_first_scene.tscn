@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://lxyhsoue4wh2"]
 
-[ext_resource type="Texture2D" uid="uid://bh2xipyknakt1" path="res://icon.svg" id="1_ebbnx"]
-[ext_resource type="PackedScene" uid="uid://b1iun4g5tfoc1" path="res://bobert.tscn" id="2_bo7ot"]
+[ext_resource type="Texture2D" uid="uid://bh2xipyknakt1" path="res://icon.svg" id="1_1304x"]
+[ext_resource type="PackedScene" uid="uid://b1iun4g5tfoc1" path="res://Scenes/Characters/bobert.tscn" id="2_g0573"]
+[ext_resource type="Script" uid="uid://dvkcynsmytmji" path="res://Scripts/player.gd" id="3_g0573"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bo7ot"]
 size = Vector2(128, 128)
 
 [node name="Node2D" type="Node2D" unique_id=1664644054]
+position = Vector2(2, 6)
 
 [node name="Label" type="Label" parent="." unique_id=651662969]
 offset_right = 40.0
@@ -16,7 +18,7 @@ text = "Hello World!"
 [node name="Floor" type="Sprite2D" parent="." unique_id=214565783]
 position = Vector2(587, 647)
 scale = Vector2(9.688688, -0.8199875)
-texture = ExtResource("1_ebbnx")
+texture = ExtResource("1_1304x")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor" unique_id=664176332]
 
@@ -24,5 +26,8 @@ texture = ExtResource("1_ebbnx")
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_bo7ot")
 
-[node name="Bobert" parent="." unique_id=2063614412 instance=ExtResource("2_bo7ot")]
+[node name="Bobert" parent="." unique_id=2063614412 instance=ExtResource("2_g0573")]
 position = Vector2(464, 568)
+
+[node name="Player" type="Node" parent="Bobert" unique_id=233599561]
+script = ExtResource("3_g0573")
